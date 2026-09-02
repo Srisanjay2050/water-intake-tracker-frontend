@@ -80,7 +80,7 @@ export default function History() {
                     <td>{row.day}</td>
                     <td>{row.totalMl} ml</td>
                     <td>{row.goalMl} ml</td>
-                    <td>{row.goalMet ? '✅ Met' : '—'}</td>
+                    <td>{row.goalMet ? 'Met' : 'Not met'}</td>
                     <td>
                       <button className="btn-link" onClick={() => toggleDay(row.day)}>
                         {openDay === row.day ? 'Hide' : 'View'}

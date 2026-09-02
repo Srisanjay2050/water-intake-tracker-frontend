@@ -50,7 +50,7 @@ export default function AdminSettings() {
       {current && (
         <p className="muted">
           Current: <strong>{current.dailyGoalMl} ml</strong>
-          {current.isDefault && ' (default — not yet set by an admin)'}
+          {current.isDefault && ' (default - not set by an admin yet)'}
         </p>
       )}
       <form onSubmit={save}>
@@ -63,11 +63,11 @@ export default function AdminSettings() {
             onChange={(e) => setGoal(e.target.value)}
           />
         </label>
-        <p className="hint">Tip: 8 glasses ≈ 2000 ml.</p>
+        <p className="hint">Tip: 8 glasses is about 2000 ml.</p>
         {error && <p className="error">{error}</p>}
         {message && <p className="success">{message}</p>}
         <button className="btn" disabled={busy}>
-          {busy ? 'Saving…' : 'Save goal'}
+          {busy ? 'Saving...' : 'Save goal'}
         </button>
       </form>
     </div>

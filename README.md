@@ -1,4 +1,4 @@
-# Water Intake Tracker — Frontend
+# Water Intake Tracker - Frontend
 
 React single-page app for logging daily water intake and tracking it against a
 recommended daily goal. Includes an admin dashboard for managing users and
@@ -13,7 +13,7 @@ Built with **React + Vite + React Router**, talking to the
 
 ### User
 - Register / log in
-- Log water intake — quick-add buttons (250 / 500 / 750 ml) or a custom amount
+- Log water intake - quick-add buttons (250 / 500 / 750 ml) or a custom amount
 - "Today" view: running total vs daily goal, progress bar, remaining amount
 - History view: past days with daily totals, expandable to individual entries
 - Delete a logged entry (from Today or History)
@@ -86,7 +86,7 @@ npm run preview   # serve the production build locally
 
 - **User:** register a new account from the Register page.
 - **Admin:** use the credentials seeded by the backend
-  (`npm run seed:admin` — defaults `admin@example.com` / `Admin@12345`, override
+  (`npm run seed:admin` - defaults `admin@example.com` / `Admin@12345`, override
   via the backend `.env`). Admins are routed to `/admin/users` on login.
 
 ---

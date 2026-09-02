@@ -58,7 +58,7 @@ export default function Register() {
         <p className="hint">Password must be at least 6 characters.</p>
         {error && <p className="error">{error}</p>}
         <button className="btn" disabled={busy}>
-          {busy ? 'Creating…' : 'Register'}
+          {busy ? 'Creating...' : 'Register'}
         </button>
       </form>
       <p className="muted">

@@ -27,22 +27,22 @@ export default function AdminUserDetail() {
       <div className="card">
         <p className="error">{error}</p>
         <Link className="btn-link" to="/admin/users">
-          ← Back to users
+          &larr; Back to users
         </Link>
       </div>
     );
   }
-  if (!data) return <div className="card">Loading…</div>;
+  if (!data) return <div className="card">Loading...</div>;
 
   return (
     <div className="stack">
       <div className="card">
         <Link className="btn-link" to="/admin/users">
-          ← Back to users
+          &larr; Back to users
         </Link>
         <h1>{data.user.name}</h1>
         <p className="muted">
-          {data.user.email} · recommended goal {data.goalMl} ml/day
+          {data.user.email} - recommended goal {data.goalMl} ml/day
         </p>
       </div>
 
@@ -67,7 +67,7 @@ export default function AdminUserDetail() {
                     <td>{h.day}</td>
                     <td>{h.totalMl} ml</td>
                     <td>{h.entryCount}</td>
-                    <td>{h.goalMet ? '✅' : '—'}</td>
+                    <td>{h.goalMet ? 'Yes' : 'No'}</td>
                   </tr>
                 ))}
               </tbody>

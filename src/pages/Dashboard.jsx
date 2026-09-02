@@ -58,7 +58,7 @@ export default function Dashboard() {
   };
 
   if (!today) {
-    return <div className="card">{error ? <p className="error">{error}</p> : 'Loading…'}</div>;
+    return <div className="card">{error ? <p className="error">{error}</p> : 'Loading...'}</div>;
   }
 
   const pct = Math.min(today.percent, 100);
@@ -67,7 +67,7 @@ export default function Dashboard() {
   return (
     <div className="stack">
       <div className="card">
-        <h1>Today · {today.day}</h1>
+        <h1>Today - {today.day}</h1>
         <div className="progress-wrap" role="progressbar" aria-valuenow={pct}>
           <div className={`progress-bar ${goalReached ? 'is-full' : ''}`} style={{ width: `${pct}%` }} />
         </div>
@@ -76,7 +76,7 @@ export default function Dashboard() {
         </p>
         <p className="muted">
           {goalReached ? '🎉 Daily goal reached!' : `${today.remainingMl} ml to go`}
-          {today.goalIsDefault && ' · using default goal (admin has not set one yet)'}
+          {today.goalIsDefault && ' - using default goal (admin has not set one yet)'}
         </p>
       </div>
 
@@ -105,7 +105,7 @@ export default function Dashboard() {
       </div>
 
       <div className="card">
-        <h2>Today’s entries</h2>
+        <h2>Today's entries</h2>
         {today.entries.length === 0 ? (
           <p className="muted">No entries yet today.</p>
         ) : (

@@ -13,7 +13,7 @@ import AdminSettings from './pages/AdminSettings';
 // Sends people to the right landing page based on auth + role.
 function HomeRedirect() {
   const { user, loading } = useAuth();
-  if (loading) return <p className="muted">Loading…</p>;
+  if (loading) return <p className="muted">Loading...</p>;
   if (!user) return <Navigate to="/login" replace />;
   return <Navigate to={user.role === 'admin' ? '/admin/users' : '/dashboard'} replace />;
 }

@@ -47,7 +47,7 @@ export default function Login() {
         </label>
         {error && <p className="error">{error}</p>}
         <button className="btn" disabled={busy}>
-          {busy ? 'Logging in…' : 'Log in'}
+          {busy ? 'Logging in...' : 'Log in'}
         </button>
       </form>
       <p className="muted">
