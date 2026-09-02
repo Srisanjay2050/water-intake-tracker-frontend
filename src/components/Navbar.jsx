@@ -14,7 +14,7 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      <span className="brand">💧 Water Intake Tracker</span>
+      <span className="brand">Water Intake Tracker</span>
       <div className="nav-links">
         {user.role === 'admin' ? (
           <>

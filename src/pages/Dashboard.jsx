@@ -75,7 +75,7 @@ export default function Dashboard() {
           {today.totalMl} ml <span className="muted">/ {today.goalMl} ml</span>
         </p>
         <p className="muted">
-          {goalReached ? '🎉 Daily goal reached!' : `${today.remainingMl} ml to go`}
+          {goalReached ? 'Daily goal reached!' : `${today.remainingMl} ml to go`}
           {today.goalIsDefault && ' - using default goal (admin has not set one yet)'}
         </p>
       </div>
