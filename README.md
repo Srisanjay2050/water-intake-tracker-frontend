@@ -25,6 +25,12 @@ Built with **React + Vite + React Router**, talking to the
 - Set / update the recommended daily goal
 - Delete a user account (own account is disabled)
 
+### General
+- Light / dark theme with a navbar toggle; remembers the choice and follows the
+  OS setting by default (applied before first paint, so no flash)
+- Circular progress ring for today's intake vs goal
+- Responsive layout
+
 ---
 
 ## Tech stack
@@ -121,6 +127,7 @@ frontend/
     ├── context/AuthContext.jsx  # auth state / actions
     ├── components/
     │   ├── Navbar.jsx
+    │   ├── ThemeToggle.jsx      # light/dark toggle, persisted to localStorage
     │   └── ProtectedRoute.jsx   # auth + admin route guard
     ├── pages/
     │   ├── Login.jsx

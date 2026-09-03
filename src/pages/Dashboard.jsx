@@ -64,20 +64,40 @@ export default function Dashboard() {
   const pct = Math.min(today.percent, 100);
   const goalReached = today.totalMl >= today.goalMl;
 
+  const R = 60;
+  const circumference = 2 * Math.PI * R;
+  const dashOffset = circumference * (1 - pct / 100);
+
   return (
     <div className="stack">
       <div className="card">
         <h1>Today - {today.day}</h1>
-        <div className="progress-wrap" role="progressbar" aria-valuenow={pct}>
-          <div className={`progress-bar ${goalReached ? 'is-full' : ''}`} style={{ width: `${pct}%` }} />
+        <div className="ring-wrap">
+          <svg className="ring" viewBox="0 0 144 144" role="progressbar" aria-valuenow={pct} aria-valuemin={0} aria-valuemax={100}>
+            <circle className="ring-track" cx="72" cy="72" r={R} />
+            <circle
+              className={`ring-value ${goalReached ? 'is-full' : ''}`}
+              cx="72"
+              cy="72"
+              r={R}
+              strokeDasharray={circumference}
+              strokeDashoffset={dashOffset}
+              transform="rotate(-90 72 72)"
+            />
+            <text className="ring-center" x="72" y="78" textAnchor="middle">{pct}%</text>
+          </svg>
+          <div className="ring-meta">
+            <p className="big">
+              {today.totalMl} ml <span className="muted">/ {today.goalMl} ml</span>
+            </p>
+            <p className="muted">
+              {goalReached ? 'Daily goal reached!' : `${today.remainingMl} ml to go`}
+            </p>
+            {today.goalIsDefault && (
+              <p className="hint">Using the default goal - an admin has not set one yet.</p>
+            )}
+          </div>
         </div>
-        <p className="big">
-          {today.totalMl} ml <span className="muted">/ {today.goalMl} ml</span>
-        </p>
-        <p className="muted">
-          {goalReached ? 'Daily goal reached!' : `${today.remainingMl} ml to go`}
-          {today.goalIsDefault && ' - using default goal (admin has not set one yet)'}
-        </p>
       </div>
 
       <div className="card">
