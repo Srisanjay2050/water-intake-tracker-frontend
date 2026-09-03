@@ -68,10 +68,20 @@ export default function Dashboard() {
   const circumference = 2 * Math.PI * R;
   const dashOffset = circumference * (1 - pct / 100);
 
+  const prettyDate = new Date(`${today.day}T00:00:00`).toLocaleDateString(undefined, {
+    weekday: 'long',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+  });
+
   return (
     <div className="stack">
       <div className="card">
-        <h1>Today - {today.day}</h1>
+        <div className="page-head">
+          <h1>Today</h1>
+          <p className="page-date">{prettyDate}</p>
+        </div>
         <div className="ring-wrap">
           <svg className="ring" viewBox="0 0 144 144" role="progressbar" aria-valuenow={pct} aria-valuemin={0} aria-valuemax={100}>
             <circle className="ring-track" cx="72" cy="72" r={R} />

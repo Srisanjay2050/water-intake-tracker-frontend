@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import PasswordField from '../components/PasswordField';
 
 export default function Register() {
   const { register } = useAuth();
@@ -45,16 +46,11 @@ export default function Register() {
             onChange={(e) => setForm({ ...form, email: e.target.value })}
           />
         </label>
-        <label>
-          Password
-          <input
-            type="password"
-            required
-            minLength={6}
-            value={form.password}
-            onChange={(e) => setForm({ ...form, password: e.target.value })}
-          />
-        </label>
+        <PasswordField
+          minLength={6}
+          value={form.password}
+          onChange={(e) => setForm({ ...form, password: e.target.value })}
+        />
         <p className="hint">Password must be at least 6 characters.</p>
         {error && <p className="error">{error}</p>}
         <button className="btn" disabled={busy}>

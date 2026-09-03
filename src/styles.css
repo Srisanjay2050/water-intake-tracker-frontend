@@ -65,6 +65,21 @@ h1 {
   letter-spacing: -0.01em;
 }
 
+.page-head {
+  margin-bottom: 1.5rem;
+}
+
+.page-head h1 {
+  margin: 0 0 0.2rem;
+}
+
+.page-date {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
 h2 {
   font-size: 1.05rem;
   margin: 0 0 0.85rem;
@@ -228,6 +243,38 @@ input:focus {
   font-size: 0.8rem;
   color: var(--muted);
   margin: 0.25rem 0 1rem;
+}
+
+/* password field with show/hide toggle */
+.password-wrap {
+  position: relative;
+  display: block;
+  margin-top: 0.35rem;
+}
+
+.password-wrap input {
+  margin-top: 0;
+  padding-right: 4.25rem;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 0.4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  cursor: pointer;
+  padding: 0.3rem 0.45rem;
+  border-radius: 6px;
+}
+
+.password-toggle:hover {
+  color: var(--blue);
 }
 
 /* ---------- buttons ---------- */

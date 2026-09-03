@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import PasswordField from '../components/PasswordField';
 
 export default function Login() {
   const { login } = useAuth();
@@ -36,15 +37,10 @@ export default function Login() {
             onChange={(e) => setForm({ ...form, email: e.target.value })}
           />
         </label>
-        <label>
-          Password
-          <input
-            type="password"
-            required
-            value={form.password}
-            onChange={(e) => setForm({ ...form, password: e.target.value })}
-          />
-        </label>
+        <PasswordField
+          value={form.password}
+          onChange={(e) => setForm({ ...form, password: e.target.value })}
+        />
         {error && <p className="error">{error}</p>}
         <button className="btn" disabled={busy}>
           {busy ? 'Logging in...' : 'Log in'}
